@@ -6,7 +6,9 @@ using std::cout;
 using std::endl;
 
 Person::Person(const char *name_, Person* father_, Person* mother_){
-    name = new char[strlen(name_)];
+    // strlen returns length of str, excluding null char
+    // need to + 1 to include space for null char in strcpy
+    name = new char[strlen(name_)+1];
     strcpy(name, name_);
     father = father_;
     mother = mother_;
