@@ -66,7 +66,7 @@ char* Person::compute_relation(int level){
     // reference to empty string is deleted in last line of printLineage function
     if(level == 0) return strcpy(new char[1], "");
 
-    char *temp = strcpy(new char[strlen("grand ") + 1], "grand ");;
+    char *temp = strcpy(new char[strlen("grand ") + 1], "grand ");
     
     for(int i = 2; i <= level; i++){
         char *temp2 = new char[strlen("great ") + strlen(temp) + 1];
