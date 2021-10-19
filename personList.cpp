@@ -8,7 +8,8 @@ using std::endl;
 PersonList::PersonList(){
     capacity = 2;
     numPeople = 0;
-    theList = new Person*[capacity];
+    theList = new Person*[capacity-1];
+    // changed above Person[] to include capacity-1 because this is an index so it must be from 0 to capacity-1
 }
 
 PersonList::~PersonList(){
