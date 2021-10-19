@@ -54,6 +54,8 @@ void Person::printLineage(char dir, int level){
             father->printLineage(dir, level + 1);
         }
     }
+    // remove reference to string returned from compute_relation
+    delete[] temp;
 }
 
 /* helper function to compute the lineage
@@ -61,6 +63,7 @@ void Person::printLineage(char dir, int level){
 * if level >= 1 then returns ("great ")^(level - 1) + "grand "
 */
 char* Person::compute_relation(int level){
+    // reference to empty string is deleted in last line of printLineage function
     if(level == 0) return strcpy(new char[1], "");
 
     char *temp = strcpy(new char[strlen("grand ") + 1], "grand ");;
