@@ -84,6 +84,8 @@ char* Person::compute_relation(int level){
 void expand(Person ***t, int *MAX){
   Person **temp = new Person*[2 * *MAX];
   memcpy(temp, *t, *MAX * sizeof(**t));
+  // we must delete the original addresses of each Person pointer after copying them over to new array
+  delete[] *t;
   *MAX *= 2;
   *t = temp;
 }
