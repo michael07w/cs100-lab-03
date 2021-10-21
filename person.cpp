@@ -18,7 +18,8 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
 }
 
 Person::~Person(){
-    delete children;
+    delete[] name;
+    delete[] children;
 }
 
 void Person::addChild(Person *newChild){
@@ -66,12 +67,7 @@ char* Person::compute_relation(int level){
     // reference to empty string is deleted in last line of printLineage function
     if(level == 0) return strcpy(new char[1], "");
 
-<<<<<<< HEAD
-    char *temp = strcpy(new char[strlen("grand ") + 1], "grand ");
-    
-=======
     char *temp = strcpy(new char[strlen("grand ") + 1], "grand ");;
->>>>>>> 7b4c9b32d22eb9b321db728837fdfbad56fb3da9
     for(int i = 2; i <= level; i++){
         char *temp2 = new char[strlen("great ") + strlen(temp) + 1];
         strcat(strcpy(temp2, "great "), temp);
